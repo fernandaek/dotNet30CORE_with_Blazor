@@ -1,0 +1,59 @@
+﻿@page "/exercise-04-01"
+
+@using Exercise1.Classes.Chapter_04
+@using Exercise1.Classes.Chapter_04_Methods
+
+
+<h3>Exercise04_01</h3>
+
+<input type="text" @bind="value1" placeholder="First name" />
+<input type="text" @bind="value2" placeholder="First name" />
+<br />
+
+<button class="btn-sm btn-light" @onclick="Add">+</button>
+<button class="btn-sm btn-light" @onclick="Subtract">-</button>
+<button class="btn-sm btn-light" @onclick="Devide">/</button>
+<button class="btn-sm btn-light" @onclick="Multiply">x</button>
+
+
+
+
+
+<h4>@result</h4>
+
+
+
+
+
+@code {
+    double value1 = default, value2 = default;
+
+    string result = string.Empty;
+
+    Calculator calc = new Calculator();
+
+
+    void Add()
+    {
+        var values = new Values(value1, value2);
+        var total = values.Add();
+        result = total.Output();
+    }
+
+    void Subtract()
+    {
+        var values = new Values(value1, value2);
+        result = values.Subtract().Output();
+    }
+
+    void Devide()
+    {
+        result = new Values(value1, value2).Devide().Output();
+    }
+
+    void Multiply()
+    {
+        result = new Values(value1, value2).Multiply().Output();
+    }
+
+}

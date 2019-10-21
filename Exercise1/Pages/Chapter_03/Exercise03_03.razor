@@ -1,0 +1,35 @@
+﻿@page "/exercise-03-03"
+
+@using Exercises.Classes.Chapter_03
+
+
+<h3>Enter Student Data</h3>
+
+<input @bind="firstName" type="text" placeholder="First Name" />
+<input @bind="lastName" type="text" placeholder="Last Name" />
+<input @bind="age" type="text" placeholder="Age" />
+<button class="btn-sm btn-success" @onclick="CreateStudent">Create</button>
+<button class="btn-sm btn-danger" @onclick="ClearStudent">Clear</button>
+
+<h4>@output</h4>
+
+
+@code {
+    string firstName, lastName, output;
+    int age;
+
+
+    void CreateStudent()
+    {
+        var student = new Student(firstName, lastName, age);
+        output = $"{student.FullName} {student.age}";
+    }
+
+    void ClearStudent()
+    {
+        firstName = string.Empty;
+        lastName = string.Empty;
+        output = string.Empty;
+        age = default;
+    }
+}
