@@ -12,6 +12,10 @@ namespace Exercise1.Classes.Chapter_04_Methods
         public double Result { get; set; }
         public Operators Operator { get; set; }
 
+        public Values()
+        {
+        }
+
         public Values(double value1, double value2)
         {
             Value1 = value1;
