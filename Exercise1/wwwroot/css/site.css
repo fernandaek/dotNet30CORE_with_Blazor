@@ -167,3 +167,15 @@ app {
     padding: 010px;
 }
 
+
+
+/*My CSS*/
+calc-btn-size-sm {
+    width: 33px;
+    height: 33px;
+}
+
+calc-btn-size-lg {
+    width: 108px;
+    height: 33px
+}
