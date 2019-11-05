@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Exercise1\Exercise1.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Chapter_12\" />
+  </ItemGroup>
+
 </Project>

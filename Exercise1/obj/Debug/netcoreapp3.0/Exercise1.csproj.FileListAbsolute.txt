@@ -57,3 +57,9 @@ C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Deb
 C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\Razor\Pages\Chapter_06\Exercise06_01.razor.g.cs
 C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Chapter_07\Exercise_07_01.razor.g.cs
 C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\Razor\Pages\Chapter_07\Exercise_07_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Chapter_08\Exercise_08_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\Razor\Pages\Chapter_08\Exercise_08_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Chapter_10\Exercise_10_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\Razor\Pages\Chapter_10\Exercise_10_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\RazorDeclaration\Pages\Chapter_11\Exercise_11_01.razor.g.cs
+C:\Users\Fernanda Ek\Documents\EC Utbildning\C-Sharp\Exercise1\Exercise1\obj\Debug\netcoreapp3.0\Razor\Pages\Chapter_11\Exercise_11_01.razor.g.cs

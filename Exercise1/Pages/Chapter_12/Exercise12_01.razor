@@ -1,0 +1,135 @@
+﻿@page "/exercise-11-01"
+
+@using Exercise1.Classes.Chapter_12_Inheritance
+
+<h3>Substances</h3>
+<div class="row">
+    <div class="col-5">
+        @if (error != string.Empty)
+        {
+            <div class="form-row bottom-margin-small">
+                <div class="col-7 alert alert-danger" role="alert">
+                    <strong>Error</strong> @error
+                </div>
+            </div>
+        }
+
+        <div class="form-row bottom-margin-small">
+            <div class="col-3">
+                <input @bind="@newName" class="form-control" placeholder="Substance Name" />
+            </div>
+            <div class="col-1">
+                <input @bind="@newMass" class="form-control" placeholder="Mass" />
+            </div>
+            <div class="col-2">
+                <div class="form-group">
+                    <select class="form-control" @bind="@state">
+                        @foreach (var state in substances.SateNames)
+                        {
+                            <option value=@state>@state</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary btn-padding" @onclick="Add">Add</button>
+            </div>
+        </div>
+
+        <div class="form-row bottom-margin-small">
+            <div class="col-auto">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-primary btn-padding" @onclick="@(e => Get(States.Solid))">Solid</button>
+                    <button class="btn btn-primary btn-padding" @onclick="@(e => Get(States.Liquid))">Liquid</button>
+                    <button class="btn btn-primary btn-padding" @onclick="@(e => Get(States.Gas))">Gas</button>
+                    <button class="btn btn-primary btn-padding" @onclick="@(e => Get(States.Plasma))">Plasma</button>
+                    <button class="btn btn-primary btn-padding" @onclick="GetAll">All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <ul class="list-group col-7">
+                @foreach (var matter in matters)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>@matter.Name (@matter.Mass)</strong>
+                        <span class="badge badge-primary badge-pill">@matter.State</span>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@code {
+
+    Substances substances = new Substances();
+    List<Matter> matters = new List<Matter>();
+
+    string newName, newMass, state, error = string.Empty;
+
+    void GetAll()
+    {
+        matters = substances.Get();
+    }
+
+    protected override void OnInitialized()
+    {
+        GetAll();
+    }
+
+    void Get(States states)
+    {
+        error = string.Empty;
+        matters = substances.Get(s => s.State.Equals(state));
+    }
+
+    void Add()
+    {
+        try
+        {
+            var error = string.Empty;
+
+            var success = int.TryParse(newMass, out int mass);
+
+            if (success == true)
+            {
+
+                var stateValue = substances.GetStateValue(state);
+
+                switch (stateValue)
+                {
+                    case States.Liquid:
+                        substances.Add(new Liquid(newName, mass));
+                        break;
+                    case States.Gas:
+                        substances.Add(new Gas(newName, mass));
+                        break;
+                    case States.Plasma:
+                        substances.Add(new Plasma(newName, mass));
+                        break;
+                    case States.Solid:
+                        substances.Add(new Solid(newName, mass));
+                        break;
+                }
+                newName = string.Empty;
+                newMass = string.Empty;
+                state = string.Empty;
+            }
+            else error = $"Could not add the substance.";
+        }
+
+        catch
+        {
+
+            var error = $"Could not add the substance";
+        }
+    }
+
+
+}
